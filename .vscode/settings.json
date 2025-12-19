@@ -1,0 +1,10 @@
+{
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.typeCheckingMode": "standard",
+
+  "search.exclude": {
+    "**/data/": true
+  },
+
+  "python.analysis.ignore": ["**/data/**"]
+}
