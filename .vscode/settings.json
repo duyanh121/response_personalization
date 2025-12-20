@@ -6,5 +6,9 @@
     "**/data/": true
   },
 
+  // "files.exclude": {
+  //   "data/": true
+  // },
+
   "python.analysis.ignore": ["**/data/**"]
 }
