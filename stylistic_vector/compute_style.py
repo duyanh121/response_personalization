@@ -3,7 +3,7 @@ from load_data import load_texts
 from style_features import extract_features_batch
 
 # ================= CONFIG =================
-DATA_PATH = "data/sample/mr_train.csv"
+DATA_PATH = "data/processed/mr_train.csv"
 TEXT_COLUMN = "response"
 MAX_TEXTS = 100000       # giới hạn cho nhanh
 # =========================================
