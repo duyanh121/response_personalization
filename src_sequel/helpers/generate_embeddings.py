@@ -3,7 +3,7 @@ from torch.nn.functional import normalize
 from tqdm import tqdm
 
 
-def encode_messages(
+def generate_embeddings(
     texts,
     model,
     tokenizer,

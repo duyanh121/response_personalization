@@ -1,4 +1,4 @@
-from helpers.encode_query import encode_query
+from rag.generate_embedding_single import generate_embedding_single
 
 def retrieve_top_k(
     query_text,
@@ -9,7 +9,7 @@ def retrieve_top_k(
     device,
     k=5
 ):
-    q_emb = encode_query(query_text, model, tokenizer, device)
+    q_emb = generate_embedding_single(query_text, model, tokenizer, device)
 
     scores, indices = index.search(q_emb, k)
 

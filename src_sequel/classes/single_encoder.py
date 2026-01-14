@@ -2,7 +2,7 @@ from transformers import CanineModel
 import torch.nn as nn
 import torch.nn.functional as F
 
-class StyleEncoder(nn.Module):
+class SingleEncoder(nn.Module):
     def __init__(self, model_name="google/canine-s", proj_dim=128):
         super().__init__()
         self.encoder = CanineModel.from_pretrained(model_name)

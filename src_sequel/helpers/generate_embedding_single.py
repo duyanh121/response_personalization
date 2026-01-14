@@ -1,7 +1,7 @@
 import torch
 from torch.nn.functional import normalize
 
-def encode_query(text, model, tokenizer, device, max_length=512):
+def generate_embedding_single(text, model, tokenizer, device, max_length=512):
     model.eval()
 
     enc = tokenizer(
