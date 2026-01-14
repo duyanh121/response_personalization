@@ -1,4 +1,4 @@
-from rag.generate_embedding_single import generate_embedding_single
+from helpers.generate_embedding_single import generate_embedding_single
 
 def retrieve_top_k(
     query_text,
@@ -13,5 +13,15 @@ def retrieve_top_k(
 
     scores, indices = index.search(q_emb, k)
 
-    examples = [records[i]["content"] for i in indices[0]]
-    return examples
+    results = []
+    for i, idx in enumerate(indices[0]):
+        if idx < len(records):
+            results.append({
+                "author": records[idx]["author"],
+                "content": records[idx]["content"],
+                "similarity": scores[0][i].item() if hasattr(scores[0][i], 'item') else float(scores[0][i]),
+                "rank_by_similarity": i + 1,  # i=0 is rank 1 (most similar)
+                "original_index": int(idx)
+            })
+    
+    return results
