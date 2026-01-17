@@ -1,6 +1,7 @@
 data/raw/
 data/processed/
-models/
+API_KEY
+output/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
