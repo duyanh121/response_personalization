@@ -1,15 +1,7 @@
-# =========================
-# Configuration
-# =========================
 ENV_NAME := canine-gpu
-PYTHON := python
 CUDA_TORCH_URL := https://download.pytorch.org/whl/cu121
 
 .PHONY: setup clean
-
-# =========================
-# One-command setup
-# =========================
 
 setup:
 	conda create -y -n $(ENV_NAME) python=3.10 && \
@@ -37,10 +29,6 @@ print("✅ Setup complete")
 print("PyTorch:", torch.__version__)
 print("CUDA available:", torch.cuda.is_available())
 EOF
-
-# =========================
-# Cleanup
-# =========================
 
 clean:
 	conda remove -y -n $(ENV_NAME) --all
